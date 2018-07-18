@@ -3,7 +3,7 @@ import numpy as np
 def tan_cal(cir1, cir2, spec):
 	tana = (cir2["y"] - cir1["y"]) / (cir2["x"] -  cir1["x"])
 	dist = ((cir2["y"] - cir1["y"])**2 + (cir2["x"] -  cir1["x"])**2 )**.5
-	tanb = spec * (cir2["r"]-cir1["r"]) / dist
+	tanb = spec * (cir2["r"]-cir1["r"]) / ((dist **2 - (cir2["r"]-cir1["r"]) ** 2))** .5
 	tan = (tana + tanb)/(1 - tana * tanb)
 	return tan
 
